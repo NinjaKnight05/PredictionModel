@@ -92,7 +92,7 @@ elif menu == 'Prediction':
             st.success(f'✅ Customer Likely to Stay ({(1-prob)*100:.2f}%)')
 
 elif menu == 'Analysis':
-   st.title('Model Analysis')
+    st.title('Model Analysis')
     st.write(df)
  
     st.subheader('CHURNED MEMBERS (M/F)')
