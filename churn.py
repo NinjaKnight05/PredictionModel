@@ -92,10 +92,14 @@ elif menu == 'Prediction':
             st.success(f'✅ Customer Likely to Stay ({(1-prob)*100:.2f}%)')
 
 elif menu == 'Analysis':
-    st.title('Model Analysis')
+   st.title('Model Analysis')
     st.write(df)
-
-  
-    chart1=px.bar(df,y='Gender',x='Exited',color='Gender',title='CHURNED MEMBERS (M/F)')
+ 
+    st.subheader('CHURNED MEMBERS (M/F)')
+    chart1=px.bar(df,y='Gender',x='Exited',color='Gender')
     st.write(chart1)
+    
+    st.subheader('Active Member And his Tenure')
+    chart2 = px.pie(df,names='Tenure',values='IsActiveMember')
+    st.plotly_chart(chart2)
 
